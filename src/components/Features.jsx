@@ -1,0 +1,77 @@
+import React from 'react';
+import { Shield, Gauge, Star } from 'lucide-react';
+
+const features = [
+  {
+    icon: Gauge,
+    title: 'Speed that ranks',
+    desc: 'Clean code, optimized assets, and modern frameworks that score A+ on Core Web Vitals.',
+  },
+  {
+    icon: Shield,
+    title: 'Built to scale',
+    desc: 'Enterprise-grade practices: accessibility, security, and maintainable architectures.',
+  },
+  {
+    icon: Star,
+    title: 'Conversion by design',
+    desc: 'Messaging, layout, and micro-interactions engineered to move visitors to action.',
+  },
+];
+
+const Features = () => {
+  return (
+    <section id="features" className="relative w-full bg-[#0B0B10] py-20 text-white">
+      <div className="mx-auto max-w-7xl px-6">
+        <div className="mx-auto max-w-2xl text-center">
+          <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">Everything a high‑converting site needs</h2>
+          <p className="mt-3 text-white/70">
+            We blend brand clarity with performance and persuasive UX so your site becomes a revenue channel—not a brochure.
+          </p>
+        </div>
+
+        <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {features.map(({ icon: Icon, title, desc }) => (
+            <div
+              key={title}
+              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-6 transition hover:bg-white/[0.08]"
+            >
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-tr from-indigo-500/20 via-blue-500/20 to-cyan-400/20 ring-1 ring-inset ring-white/10">
+                <Icon className="h-6 w-6 text-cyan-300" />
+              </div>
+              <h3 className="mt-4 text-lg font-semibold">{title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-white/70">{desc}</p>
+              <div className="pointer-events-none absolute -right-8 -top-8 h-32 w-32 rounded-full bg-cyan-500/10 blur-2xl transition-opacity group-hover:opacity-100" />
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-12 grid gap-6 sm:grid-cols-2">
+          <div className="rounded-2xl border border-white/10 bg-gradient-to-br from-white/[0.06] to-white/[0.03] p-6">
+            <p className="text-sm text-white/70">Playbook</p>
+            <h4 className="mt-2 text-xl font-semibold">Proven sections that sell</h4>
+            <ul className="mt-3 space-y-2 text-sm text-white/70">
+              <li>Hero with sharp value proposition</li>
+              <li>Social proof and credibility boosts</li>
+              <li>Problem → Solution narrative</li>
+              <li>Differentiators and outcomes</li>
+              <li>Crystal‑clear call‑to‑action</li>
+            </ul>
+          </div>
+          <div className="rounded-2xl border border-white/10 bg-gradient-to-bl from-white/[0.06] to-white/[0.03] p-6">
+            <p className="text-sm text-white/70">Tech stack</p>
+            <h4 className="mt-2 text-xl font-semibold">Modern, reliable, measurable</h4>
+            <ul className="mt-3 space-y-2 text-sm text-white/70">
+              <li>Analytics + heatmaps wired from day one</li>
+              <li>SEO fundamentals with structured data</li>
+              <li>Accessibility and semantic HTML</li>
+              <li>Automated performance checks</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Features;
