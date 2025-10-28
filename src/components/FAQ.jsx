@@ -21,7 +21,8 @@ const qa = [
   },
 ];
 
-const Item = ({ q, a }: { q: string; a: string }) => {
+// Plain JS props (no TypeScript types in .jsx files)
+const Item = ({ q, a }) => {
   const [open, setOpen] = useState(false);
   return (
     <div className="rounded-xl border border-white/10 bg-white/5">

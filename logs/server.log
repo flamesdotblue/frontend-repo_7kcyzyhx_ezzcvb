@@ -3,32 +3,7 @@
 > vite
 
 
-  VITE v5.4.20  ready in 208 ms
+  VITE v5.4.20  ready in 194 ms
 
   ➜  Local:   http://localhost:3000/
   ➜  Network: http://172.20.19.57:3000/
-3:27:27 AM [vite] Pre-transform error: Transform failed with 1 error:
-/home/workspace/src/components/FAQ.jsx:24:22: ERROR: Expected ")" but found ":"
-3:27:31 AM [vite] Internal server error: Transform failed with 1 error:
-/home/workspace/src/components/FAQ.jsx:24:22: ERROR: Expected ")" but found ":"
-  Plugin: vite:esbuild
-  File: /home/workspace/src/components/FAQ.jsx:24:22
-  
-  Expected ")" but found ":"
-  22 |  ];
-  23 |  
-  24 |  const Item = ({ q, a }: { q: string; a: string }) => {
-     |                        ^
-  25 |    const [open, setOpen] = useState(false);
-  26 |    return (
-  
-      at failureErrorWithLog (/home/workspace/node_modules/esbuild/lib/main.js:1472:15)
-      at /home/workspace/node_modules/esbuild/lib/main.js:755:50
-      at responseCallbacks.<computed> (/home/workspace/node_modules/esbuild/lib/main.js:622:9)
-      at handleIncomingPacket (/home/workspace/node_modules/esbuild/lib/main.js:677:12)
-      at Socket.readFromStdout (/home/workspace/node_modules/esbuild/lib/main.js:600:7)
-      at Socket.emit (node:events:508:28)
-      at addChunk (node:internal/streams/readable:559:12)
-      at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
-      at Readable.push (node:internal/streams/readable:390:5)
-      at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
