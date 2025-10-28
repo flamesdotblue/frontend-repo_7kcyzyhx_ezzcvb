@@ -8,6 +8,7 @@ import Testimonials from './components/Testimonials';
 import Pricing from './components/Pricing';
 import CTA from './components/CTA';
 import FAQ from './components/FAQ';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -20,7 +21,9 @@ function App() {
       <Testimonials />
       <Pricing />
       <CTA />
+      {/* FAQ should be after the form and before the footer */}
       <FAQ />
+      <Footer />
     </div>
   );
 }
