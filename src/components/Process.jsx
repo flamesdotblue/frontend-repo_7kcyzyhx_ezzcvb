@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const steps = [
   {
@@ -27,27 +28,46 @@ const Process = () => {
   return (
     <section id="process" className="relative w-full bg-[#0B0B10] py-20 text-white">
       <div className="mx-auto max-w-7xl px-6">
-        <div className="mx-auto max-w-2xl text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.6 }}
+          className="mx-auto max-w-2xl text-center"
+        >
           <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">A streamlined, outcomes‑first process</h2>
           <p className="mt-3 text-white/70">From kickoff to launch in as little as two weeks.</p>
-        </div>
+        </motion.div>
 
         <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-4">
-          {steps.map((s) => (
-            <div key={s.label} className="relative rounded-2xl border border-white/10 bg-white/5 p-6">
+          {steps.map((s, i) => (
+            <motion.div
+              key={s.label}
+              initial={{ opacity: 0, y: 22 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.5, delay: i * 0.06 }}
+              className="relative rounded-2xl border border-white/10 bg-white/5 p-6"
+            >
               <div className="text-sm text-white/60">{s.label}</div>
               <h3 className="mt-2 text-lg font-semibold">{s.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-white/70">{s.desc}</p>
               <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-cyan-400/10 to-transparent" />
-            </div>
+            </motion.div>
           ))}
         </div>
 
-        <div className="mt-12 rounded-2xl border border-white/10 bg-gradient-to-r from-cyan-400/10 via-indigo-400/10 to-transparent p-6 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 18 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6 }}
+          className="mt-12 rounded-2xl border border-white/10 bg-gradient-to-r from-cyan-400/10 via-indigo-400/10 to-transparent p-6 text-center"
+        >
           <p className="text-white/80">
             Need it faster? Ask about our 5‑day Design Sprint where we ideate, prototype, and test a high‑impact landing page in one week.
           </p>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

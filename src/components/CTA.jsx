@@ -1,12 +1,18 @@
 import React from 'react';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const CTA = () => {
   return (
     <section id="cta" className="relative w-full bg-[#0B0B10] py-20 text-white">
       <div className="mx-auto max-w-7xl px-6">
         <div className="grid items-center gap-8 md:grid-cols-2">
-          <div>
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{ duration: 0.6 }}
+          >
             <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
               Ready to turn your site into a growth engine?
             </h2>
@@ -18,8 +24,14 @@ const CTA = () => {
               <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-emerald-400" /> No obligation, no fluff</li>
               <li className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-emerald-400" /> Clear next steps and timeline</li>
             </ul>
-          </div>
-          <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur">
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur"
+          >
             <form className="grid grid-cols-1 gap-4">
               <div>
                 <label className="text-xs text-white/60">Name</label>
@@ -54,7 +66,7 @@ const CTA = () => {
               </button>
               <p className="text-xs text-white/50">We’ll respond within one business day.</p>
             </form>
-          </div>
+          </motion.div>
         </div>
 
         <div className="mt-16 border-t border-white/10 pt-8 text-center text-sm text-white/50">
